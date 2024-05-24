@@ -1,7 +1,7 @@
 import httpx
 import os
 import config 
-from EQUROBOT import app
+from DAXXMUSIC import app
 from pyrogram import Client, filters
 import aiofiles, aiohttp, requests
 
@@ -54,5 +54,3 @@ async def draw_image(client, message):
         return await aux.edit("Failed to download image, please try again.")
     await aux.delete()
     await message.reply_photo(downloaded_image, caption=query)
-
-
