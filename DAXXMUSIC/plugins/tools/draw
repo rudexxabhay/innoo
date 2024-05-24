@@ -195,8 +195,3 @@ async def selectModel(_:app,query:t.CallbackQuery):
         reply_to_message_id=promptData['reply_to_id']
         
     )
-
-
-
-
-
