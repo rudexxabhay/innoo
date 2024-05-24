@@ -347,7 +347,7 @@ async def download_instareels(c: app, m: Message):
 async def instagram_reel(client, message):
     if len(message.command) == 2:
         url = message.command[1]
-        response = requests.post(f"https://lexica-api.vercel.app/download/instagram?url={url}")
+        response = requests.post(f"https://instagram-feed-api-gamma.vercel.app/download/instagram?url={url}")
         data = response.json()
 
         if data['code'] == 2:
