@@ -29,7 +29,7 @@ async def chk_usr(_, message: Message):
 ➖➖➖➖➖➖➖➖➖➖➖➖
 **🍊 ɴᴀᴍᴇ** : {message.from_user.mention}
 **🍅 ᴜsᴇʀ ɪᴅ** : {message.from_user.id}
-➖➖➖➖➖➖➖➖➖➖➖➖\n**★ᴍᴀᴅᴇ ʙʏ ᴍʀ ʙʀᴏᴋᴇɴ★**
+➖➖➖➖➖➖➖➖➖➖➖➖\n
 """
     if usernamebefore != message.from_user.username:
         usernamebefore = f"@{usernamebefore}" if usernamebefore else "NO USERNAME"
@@ -43,7 +43,7 @@ async def chk_usr(_, message: Message):
 ➖➖➖➖➖➖➖➖➖➖➖➖
 **🎭 ғʀᴏᴍ** : {bef}
 **🍜 ᴛᴏ** : {aft}
-➖➖➖➖➖➖➖➖➖➖➖➖\n**★ᴍᴀᴅᴇ ʙʏ ᴍʀ ʙʀᴏᴋᴇɴ★**
+➖➖➖➖➖➖➖➖➖➖➖➖\n
 """.format(bef=usernamebefore, aft=usernameafter)
         await add_userdata(
             message.from_user.id,
@@ -57,7 +57,7 @@ async def chk_usr(_, message: Message):
 ➖➖➖➖➖➖➖➖➖➖➖➖
 **🔐 ғʀᴏᴍ** : {bef}
 **🍓 ᴛᴏ** : {aft}
-➖➖➖➖➖➖➖➖➖➖➖➖\n**★ᴍᴀᴅᴇ ʙʏ ᴍʀ ʙʀᴏᴋᴇɴ★**
+➖➖➖➖➖➖➖➖➖➖➖➖\n
 """.format(
             bef=first_name, aft=message.from_user.first_name
         )
@@ -75,7 +75,7 @@ async def chk_usr(_, message: Message):
 ➖➖➖➖➖➖➖➖➖➖➖➖
 **🚏ғʀᴏᴍ** : {bef}
 **🍕 ᴛᴏ** : {aft}
-➖➖➖➖➖➖➖➖➖➖➖➖\n**★ᴍᴀᴅᴇ ʙʏ ᴍʀ ʙʀᴏᴋᴇɴ★**
+➖➖➖➖➖➖➖➖➖➖➖➖\n
 """.format(
             bef=lastname_before, aft=lastname_after
         )
