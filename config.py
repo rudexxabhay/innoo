@@ -14,13 +14,13 @@ API_HASH = getenv("API_HASH")
 # ------------------------------------------------------
 BOT_TOKEN = getenv("BOT_TOKEN")
 # -------------------------------------------------------
-OWNER_USERNAME = getenv("OWNER_USERNAME","mrbrokn")
+OWNER_USERNAME = getenv("OWNER_USERNAME","aboutbrokenx")
 # --------------------------------------------------------
-BOT_USERNAME = getenv("BOT_USERNAME" , "mrbroknBot")
+BOT_USERNAME = getenv("BOT_USERNAME" , "Miss_YumiPro_Bot")
 # --------------------------------------------------------
-BOT_NAME = getenv("BOT_NAME" , "✰ 𝗠𝗶𝘀𝘀 ❀ 𝗬𝗨𝗠𝗜 ✰")
+BOT_NAME = getenv("BOT_NAME" , "‣ Mɪss Yᴜᴍɪ Pʀᴏ⋆ ᴠ𝟸.𝟶")
 # ---------------------------------------------------------
-ASSUSERNAME = getenv("ASSUSERNAME" , "MrBrokenx")
+ASSUSERNAME = getenv("ASSUSERNAME" , "Assis_yumi")
 # ---------------------------------------------------------
 
 
@@ -35,7 +35,7 @@ DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
 # ----------------------------------------------------------------
 
 # ----------------------------------------------------------------
-LOGGER_ID = int(getenv("LOGGER_ID", -1002094142057))
+LOGGER_ID = int(getenv("LOGGER_ID", -1002215966837))
 # ----------------------------------------------------------------
 # ----------------------------------------------------------------
 OWNER_ID = int(getenv("OWNER_ID", 1841914911))
@@ -68,7 +68,7 @@ GIT_TOKEN = getenv(
 # ------------------------------------------------------------------------
 # -------------------------------------------------------------------------
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/brokenxnetwork")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+u6mIC9k6FhozYTM9")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+aoOVBUmAwW9iY2U9")
 # ------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------
 
