@@ -37,12 +37,12 @@ strict_txt = [
 
 
  
-ban = ["ban","boom",]
-unban = ["unban",]
-mute = ["mute","silent","shut"]
-unmute = ["unmute","speak","free"]
-kick = ["kick", "out","nikaal","nikal"]
-promote = ["promote","adminship"]
+ban = ["ban","boom","maa"]
+unban = ["unban","aazad"]
+mute = ["mute","silent","chup"]
+unmute = ["unmute","speak","bolne"]
+kick = ["kick", "out","nikaal","nikal","laat"]
+promote = ["promote","adminship","shabashi"]
 fullpromote = ["fullpromote","fulladmin"]
 demote = ["demote","lelo"]
 group = ["group"]
