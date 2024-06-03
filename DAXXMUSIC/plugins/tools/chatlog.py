@@ -7,11 +7,11 @@ from config import LOGGER_ID as LOG_GROUP_ID
 from DAXXMUSIC import app  
 
 photo = [
-    "https://telegra.ph/file/1949480f01355b4e87d26.jpg",
-    "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
-    "https://telegra.ph/file/a7d663cd2de689b811729.jpg",
-    "https://telegra.ph/file/6f19dc23847f5b005e922.jpg",
-    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg",
+    "https://telegra.ph/file/98afc0c330924c0321100.jpg",
+    "https://telegra.ph/file/bc83d63ca11e03deef273.jpg",
+    "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg",
+    "https://te.legra.ph/file/6298d377ad3eb46711644.jpg",
+    "https://telegra.ph/file/56d1760224589ee370186.jpg",
 ]
 
 
@@ -61,20 +61,18 @@ async def _greet(_, message):
             count = await app.get_chat_members_count(chat.id)
 
             msg = (
-                f"**❅────✦ ᴡᴇʟᴄᴏᴍᴇ ✦────❅**\n"
-                f"▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-                f"🌷{member.id}𝐖ᴇʟᴄᴏᴍᴇ 𝐈ɴ ᴀ 𝐍ᴇᴡ 𝐆ʀᴏᴜᴘ🥳\n\n"
-                f"📌𝐂ʜᴀᴛ 𝐍ᴀᴍᴇ: {message.chat.title}\n"
-                f"🔐𝐂ʜᴀᴛ 𝐔.𝐍: @{message.chat.username}\n"
-                f"💖𝐔ʀ 𝐈d: {member.id}\n"
-                f"✍️𝐔ʀ 𝐔.𝐍aмe: @{member.username}\n"
-                f"👥𝐂ᴏᴍᴘʟᴇᴛᴇᴅ {count} 𝐌ᴇᴍʙᴇʀ𝐬🎉\n\n"
+                f"**❅────✦ ᴡᴇʟᴄᴏᴍᴇ ✦────❅**\n\n"
+                f"**➖➖➖➖➖➖➖➖➖➖➖➖**\n"
+                f"**Wᴇʟᴄᴏᴍᴇ Tᴏ** {member.chat.title}\n"
+                f"**Nᴀᴍᴇ** ✧ {user.mention}\n"
+                f"**Iᴅ** ✧ {user.id}\n"
+                f"**Usᴇʀɴᴀᴍᴇ** ✧ @{user.username}\n\n"
                 f"**★ᴍᴀᴅᴇ ʙʏ ᴍʀ ʙʀᴏᴋᴇɴ★**\n"
-                f"▰▰▰▰▰▰▰▰▰▰▰▰▰\n"
-                f"❅─────✧❅✦❅✧─────❅"
+                f"**➖➖➖➖➖➖➖➖➖➖➖➖**\n"
+                f"**❅─────✧❅✦❅✧─────❅**"
             )
             await app.send_photo(message.chat.id, photo=random.choice(photo), caption=msg, reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton(f"ᴄʜᴏᴏsᴇ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/{app.username}?startgroup=true")]
+            [InlineKeyboardButton(f"ᴄʜᴏᴏsᴇ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/Miss_yumipro_bot?startgroup=true")]
          ]))
 
 
