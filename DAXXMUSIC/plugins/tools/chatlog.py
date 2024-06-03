@@ -63,16 +63,16 @@ async def _greet(_, message):
             msg = (
                 f"**❅────✦ ᴡᴇʟᴄᴏᴍᴇ ✦────❅**\n\n"
                 f"**➖➖➖➖➖➖➖➖➖➖➖➖**\n"
-                f"**Wᴇʟᴄᴏᴍᴇ Tᴏ** {member.chat.title}\n"
-                f"**Nᴀᴍᴇ** ✧ {user.mention}\n"
-                f"**Iᴅ** ✧ {user.id}\n"
-                f"**Usᴇʀɴᴀᴍᴇ** ✧ @{user.username}\n\n"
+                f"**★Wᴇʟᴄᴏᴍᴇ Tᴏ** ✧ {member.chat.title}\n"
+                f"**★Nᴀᴍᴇ** ✧ {user.mention}\n"
+                f"**★Iᴅ** ✧ {user.id}\n"
+                f"**★Usᴇʀɴᴀᴍᴇ** ✧ @{user.username}\n\n"
                 f"**★ᴍᴀᴅᴇ ʙʏ ᴍʀ ʙʀᴏᴋᴇɴ★**\n"
                 f"**➖➖➖➖➖➖➖➖➖➖➖➖**\n"
                 f"**❅─────✧❅✦❅✧─────❅**"
             )
             await app.send_photo(message.chat.id, photo=random.choice(photo), caption=msg, reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton(f"ᴄʜᴏᴏsᴇ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/Miss_yumipro_bot?startgroup=true")]
+            [InlineKeyboardButton(f"ᴄʜᴏᴏsᴇ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/{app.username}?startgroup=true")]
          ]))
 
 
