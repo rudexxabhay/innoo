@@ -36,9 +36,9 @@ class temp:
     U_NAME = None
     B_NAME = None
 
-# ... (rest of your code remains unchanged)
 
-# ... (FUCK you randi ke bacCHE )
+
+
 
 def circle(pfp, size=(500, 500)):
     pfp = pfp.resize(size, Image.ANTIALIAS).convert("RGBA")
@@ -65,7 +65,7 @@ def welcomepic(pic, user, chatname, id, uname):
     background.save(f"downloads/welcome#{id}.png")
     return f"downloads/welcome#{id}.png"
 
-# FUCK you RANDI KE 
+
 
 
 @app.on_message(filters.command("wel") & ~filters.private)
@@ -98,7 +98,7 @@ async def auto_state(_, message):
     else:
         await message.reply("Only Admins Can Use This Command")
 
-# ... (copy paster MADARCHOD  )
+
 
 @app.on_chat_member_updated(filters.group, group=-3)
 async def greet_group(_, member: ChatMemberUpdated):
@@ -139,7 +139,7 @@ Iᴅ ✧ {user.id}
 Usᴇʀɴᴀᴍᴇ ✧ @{user.username}
 ➖➖➖➖➖➖➖➖➖➖➖➖**
 """,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"⦿ ᴀᴅᴅ ᴍᴇ ⦿", url=f"https://t.me/Miss_YumiPro_bot?startgroup=true")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f" 𝔹𝕣𝕠𝕜𝕖𝕟 𝕩 ℕ𝕖𝕥𝕨𝕠𝕣𝕜 ☠ ", url=f"https://t.me/brokenxnetwork?Join=true")]])
         )
     except Exception as e:
         LOGGER.error(e)
@@ -149,7 +149,7 @@ Usᴇʀɴᴀᴍᴇ ✧ @{user.username}
     except Exception as e:
         pass
 
-# ... (resfuxbk 
+ 
 
 @app.on_message(filters.new_chat_members & filters.group, group=-1)
 async def bot_wel(_, message):
