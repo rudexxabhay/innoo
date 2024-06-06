@@ -12,6 +12,11 @@ photo = [
     "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg",
     "https://te.legra.ph/file/6298d377ad3eb46711644.jpg",
     "https://telegra.ph/file/56d1760224589ee370186.jpg",
+    "https://telegra.ph/file/1949480f01355b4e87d26.jpg",
+    "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
+    "https://telegra.ph/file/a7d663cd2de689b811729.jpg",
+    "https://telegra.ph/file/6f19dc23847f5b005e922.jpg",
+    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg"
 ]
 
 
@@ -52,6 +57,7 @@ async def on_left_chat_member(_, message: Message):
         await app.send_photo(LOG_GROUP_ID, photo=random.choice(photo), caption=left)
 
 #welcome
+@app.on_message(filters.command("wel") & ~filters.private)
 @app.on_message(filters.new_chat_members, group=3)
 async def _greet(_, message):    
     chat = message.chat
@@ -61,17 +67,15 @@ async def _greet(_, message):
             count = await app.get_chat_members_count(chat.id)
 
             msg = (
-                f"**❅────✦ ᴡᴇʟᴄᴏᴍᴇ ✦────❅**\n\n"
-                f"**➖➖➖➖➖➖➖➖➖➖➖➖**\n"
-                f"🌷{member.id}𝐖ᴇʟᴄᴏᴍᴇ 𝐈ɴ ᴀ 𝐍ᴇᴡ 𝐆ʀᴏᴜᴘ🥳\n\n"
-                f"📌𝐂ʜᴀᴛ 𝐍ᴀᴍᴇ: {message.chat.title}\n"
-                f"🔐𝐂ʜᴀᴛ 𝐔.𝐍: @{message.chat.username}\n"
-                f"💖𝐔ʀ 𝐈d: {member.id}\n"
-                f"✍️𝐔ʀ 𝐔.𝐍aмe: @{member.username}\n"
-                f"👥𝐂ᴏᴍᴘʟᴇᴛᴇᴅ {count} 𝐌ᴇᴍʙᴇʀ𝐬🎉\n"
-                f"**★ᴍᴀᴅᴇ ʙʏ ᴍʀ ʙʀᴏᴋᴇɴ★**\n\n"
-                f"**➖➖➖➖➖➖➖➖➖➖➖➖**\n"
-                f"**❅─────✧❅✦❅✧─────❅**"
+              f"**❅────✦ ᴡᴇʟᴄᴏᴍᴇ ✦────❅**\n\n"
+              f"▰▰▰▰▰▰▰▰▰▰▰▰▰\n\n"
+              f"**➻ ɴᴀᴍᴇ »** {user.mention}\n"
+              f"**➻ ɪᴅ »** `{user.id}\n"
+              f"**➻ ᴜ_ɴᴀᴍᴇ »** @{user.username}\n"
+              f"**➻ ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀs »** {count}\n"
+              f"**★ᴍᴀᴅᴇ ʙʏ ᴍʀ ʙʀᴏᴋᴇɴ★**\n\n"
+              f"▰▰▰▰▰▰▰▰▰▰▰▰▰\n\n"    
+              f"**❅─────✧❅✦❅✧─────❅**"
             )
             await app.send_photo(message.chat.id, photo=random.choice(photo), caption=msg, reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton(f"ᴄʜᴏᴏsᴇ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/{app.username}?startgroup=true")]
