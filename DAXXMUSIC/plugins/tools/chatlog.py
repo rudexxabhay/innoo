@@ -68,9 +68,9 @@ async def _greet(_, message):
             msg = (
               f"**❅────✦ ᴡᴇʟᴄᴏᴍᴇ ✦────❅**\n\n"
               f"▰▰▰▰▰▰▰▰▰▰▰▰▰\n\n"
-              f"**➻ ɴᴀᴍᴇ »** {user.mention}\n"
-              f"**➻ ɪᴅ »** `{user.id}\n"
-              f"**➻ ᴜ_ɴᴀᴍᴇ »** @{user.username}\n"
+              f"**➻ ɴᴀᴍᴇ »** {message.user.mention}\n"
+              f"**➻ ɪᴅ »** `{message.user.id}\n"
+              f"**➻ ᴜ_ɴᴀᴍᴇ »** @{message.user.mention}\n"
               f"**➻ ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀs »** {count}\n"
               f"**★ᴍᴀᴅᴇ ʙʏ ᴍʀ ʙʀᴏᴋᴇɴ★**\n\n"
               f"▰▰▰▰▰▰▰▰▰▰▰▰▰\n\n"    
