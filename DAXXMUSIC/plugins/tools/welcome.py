@@ -64,7 +64,7 @@ random_photo = [
 
 
 
-LOGGER = getLogger("musicbrokn")
+LOGGER = getLogger("DAXXMUSIC")
 
 class WelDatabase:
     def __init__(self):
