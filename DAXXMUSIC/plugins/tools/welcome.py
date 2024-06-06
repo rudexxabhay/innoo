@@ -18,8 +18,8 @@ from pyrogram.enums import ParseMode
 from logging import getLogger
 from DAXXMUSIC.utils.daxx_ban import admin_filter
 from PIL import Image, ImageFont, ImageChops, ImageDraw
-from pyrogram import 
-from pyrogram.types import 
+from pyrogram import *
+from pyrogram.types import *
 from logging import getLogger
 from pyrogram import Client, filters
 import requests
