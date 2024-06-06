@@ -22,13 +22,17 @@ from pyrogram.enums import ParseMode
 
 
 photo = [
+    "https://telegra.ph/file/98afc0c330924c0321100.jpg",
+    "https://telegra.ph/file/bc83d63ca11e03deef273.jpg",
+    "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg",
+    "https://te.legra.ph/file/6298d377ad3eb46711644.jpg",
+    "https://telegra.ph/file/56d1760224589ee370186.jpg",
     "https://telegra.ph/file/1949480f01355b4e87d26.jpg",
     "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
     "https://telegra.ph/file/a7d663cd2de689b811729.jpg",
     "https://telegra.ph/file/6f19dc23847f5b005e922.jpg",
-    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg",
-]
-
+    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg", 
+  ]
 
 @app.on_message(filters.new_chat_members, group=2)
 async def join_watcher(_, message):    
