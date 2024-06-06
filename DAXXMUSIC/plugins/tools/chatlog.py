@@ -57,7 +57,6 @@ async def on_left_chat_member(_, message: Message):
         await app.send_photo(LOG_GROUP_ID, photo=random.choice(photo), caption=left)
 
 #welcome
-@app.on_message(filters.command("wel") & ~filters.private)
 @app.on_message(filters.new_chat_members, group=3)
 async def _greet(_, message):    
     chat = message.chat
