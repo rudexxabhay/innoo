@@ -52,11 +52,16 @@ from DAXXMUSIC.utils.database import get_assistant, is_active_chat
 
 
 random_photo = [
+    "https://telegra.ph/file/98afc0c330924c0321100.jpg",
+    "https://telegra.ph/file/bc83d63ca11e03deef273.jpg",
+    "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg",
+    "https://te.legra.ph/file/6298d377ad3eb46711644.jpg",
+    "https://telegra.ph/file/56d1760224589ee370186.jpg",
     "https://telegra.ph/file/1949480f01355b4e87d26.jpg",
     "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
     "https://telegra.ph/file/a7d663cd2de689b811729.jpg",
     "https://telegra.ph/file/6f19dc23847f5b005e922.jpg",
-    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg",
+    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg", 
 ]
 # --------------------------------------------------------------------------------- #
 
@@ -169,8 +174,8 @@ async def greet_new_member(_, member: ChatMemberUpdated):
 
     user = member.new_chat_member.user if member.new_chat_member else member.from_user
     
-    # Add the modified condition here
-    if member.new_chat_member and not member.old_chat_member and member.new_chat_member.status != "kicked":
+    
+    if member.new_chat_member and not member.old_chat_member and member.new_chat_member.status != {"banned", "left", "restricted" , "kicked"} :
     
         try:
             pic = await app.download_media(
@@ -207,7 +212,7 @@ async def greet_new_member(_, member: ChatMemberUpdated):
 **❅─────✧❅✦❅✧─────❅**
 """,
                 reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton(button_text, url=deep_link)],
+                    [InlineKeyboardButton("вяσкєη χ ηєтωσяк ☠️", url="https://t.me/brokenxnetwork")],
                     [InlineKeyboardButton(text=add_button_text, url=add_link)],
                 ])
             )
