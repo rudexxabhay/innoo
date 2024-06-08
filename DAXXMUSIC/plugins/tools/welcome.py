@@ -18,7 +18,7 @@ from pyrogram.enums import ParseMode
 from logging import getLogger
 from DAXXMUSIC.utils.daxx_ban import admin_filter
 from PIL import ImageDraw, Image, ImageFont, ImageChops
-from pyrogram import *
+
 from pyrogram.types import *
 from logging import getLogger
 from pyrogram import Client, filters
@@ -212,7 +212,7 @@ async def greet_new_member(_, member: ChatMemberUpdated):
 **❅─────✧❅✦❅✧─────❅**
 """,
                 reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("вяσкєη χ ηєтωσяк ☠️", url="https://t.me/brokenxnetwork")],
+                    [InlineKeyboardButton(button_text url=deep_link)],
                     [InlineKeyboardButton(text=add_button_text, url=add_link)],
                 ])
             )
