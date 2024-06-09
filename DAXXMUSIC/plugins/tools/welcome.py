@@ -119,7 +119,7 @@ def welcomepic(pic, user, chatname, id, uname, brightness_factor=1.3):
     font = ImageFont.truetype('DAXXMUSIC/assets/font.ttf', size=70)
     welcome_font = ImageFont.truetype('DAXXMUSIC/assets/font.ttf', size=61)
     draw.text((2999, 450), f'ID: {id}', fill=(255, 255, 255), font=font)
-    pfp_position = (153, 134)
+    pfp_position = (155, 135)
     background.paste(pfp, pfp_position, pfp)
     background.save(f"downloads/welcome#{id}.png")
     return f"downloads/welcome#{id}.png"
@@ -132,7 +132,7 @@ def welcomepic(pic, user, chatname, id, uname, brightness_factor=1.3):
   #  draw.text((630, 230), f"USERNAME : {uname}", fill=(255, 255, 255), font=font)
 
     #
-    pfp_position = (153, 134)
+    pfp_position = (155, 135)
     background.paste(pfp, pfp_position, pfp)
     background.save(f"downloads/welcome#{id}.png")
     return f"downloads/welcome#{id}.png"
