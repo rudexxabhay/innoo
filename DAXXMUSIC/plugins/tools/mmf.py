@@ -10,26 +10,34 @@ async def mmf(_, message: Message):
     chat_id = message.chat.id
     reply_message = message.reply_to_message
 
+    if not reply_message or not reply_message.photo:
+        await message.reply_text("**Reply to an image with /mmf to memify it.**")
+        return
+
     if len(message.text.split()) < 2:
         await message.reply_text("**Give me text after /mmf to memify.**")
         return
 
-    msg = await message.reply_text(" ✍️ ")
+    msg = await message.reply_text("**Memifying this image! ✊🏻**")
     text = message.text.split(None, 1)[1]
     file = await app.download_media(reply_message)
 
-    meme = await drawText(file, text)
-    await app.send_document(chat_id, document=meme)
-
-    await msg.delete()
-
-    os.remove(meme)
-
+    try:
+        meme = await drawText(file, text)
+        await app.send_document(chat_id, document=meme)
+    except Exception as e:
+        await message.reply_text(f"**Failed to memify image. Error: {e}**")
+    finally:
+        await msg.delete()
+        if os.path.exists(meme):
+            os.remove(meme)
 
 async def drawText(image_path, text):
-    img = Image.open(image_path)
-
-    os.remove(image_path)
+    try:
+        img = Image.open(image_path)
+        os.remove(image_path)  # Remove the downloaded image file
+    except Exception as e:
+        raise Exception(f"Error opening image: {e}")
 
     i_width, i_height = img.size
 
@@ -38,119 +46,39 @@ async def drawText(image_path, text):
     else:
         fnt = "./DAXXMUSIC/assets/default.ttf"
 
-    m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
+    try:
+        m_font = ImageFont.truetype(fnt, int((70 / 640) * i_width))
+    except Exception as e:
+        raise Exception(f"Error loading font: {e}")
 
-    if ";" in text:
-        upper_text, lower_text = text.split(";")
-    else:
-        upper_text = text
-        lower_text = ""
+    upper_text, lower_text = (text.split(";") + [""])[:2]  # Split and handle missing lower text
 
     draw = ImageDraw.Draw(img)
 
     current_h, pad = 10, 5
 
+    def draw_text_wrapped(draw, text, width, font, pos_y):
+        for line in textwrap.wrap(text, width=width):
+            u_width, u_height = font.getsize(line)
+            x_pos = (i_width - u_width) / 2
+            for dx, dy in [(-2, 0), (2, 0), (0, -2), (0, 2)]:  # Outline
+                draw.text((x_pos + dx, pos_y + dy), line, font=font, fill=(0, 0, 0))
+            draw.text((x_pos, pos_y), line, font=font, fill=(255, 255, 255))
+            pos_y += u_height + pad
+        return pos_y
+
     if upper_text:
-        for u_text in textwrap.wrap(upper_text, width=15):
-            u_width, u_height = draw.textbbox(u_text, font=m_font)
-
-            draw.text(
-                xy=(((i_width - u_width) / 2) - 2, int((current_h / 640) * i_width)),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-
-            draw.text(
-                xy=(((i_width - u_width) / 2) + 2, int((current_h / 640) * i_width)),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-
-            draw.text(
-                xy=((i_width - u_width) / 2, int(((current_h / 640) * i_width)) - 2),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-
-            draw.text(
-                xy=(((i_width - u_width) / 2), int(((current_h / 640) * i_width)) + 2),
-                text=u_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-
-            draw.text(
-                xy=((i_width - u_width) / 2, int((current_h / 640) * i_width)),
-                text=u_text,
-                font=m_font,
-                fill=(255, 255, 255),
-            )
-
-            current_h += u_height + pad
+        current_h = draw_text_wrapped(draw, upper_text, width=15, font=m_font, pos_y=current_h)
 
     if lower_text:
-        for l_text in textwrap.wrap(lower_text, width=15):
-            u_width, u_height = draw.textbbox(l_text, font=m_font)
-
-            draw.text(
-                xy=(
-                    ((i_width - u_width) / 2) - 2,
-                    i_height - u_height - int((20 / 640) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-
-            draw.text(
-                xy=(
-                    ((i_width - u_width) / 2) + 2,
-                    i_height - u_height - int((20 / 640) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    (i_height - u_height - int((20 / 640) * i_width)) - 2,
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    (i_height - u_height - int((20 / 640) * i_width)) + 2,
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(0, 0, 0),
-            )
-
-            draw.text(
-                xy=(
-                    (i_width - u_width) / 2,
-                    i_height - u_height - int((20 / 640) * i_width),
-                ),
-                text=l_text,
-                font=m_font,
-                fill=(255, 255, 255),
-            )
-
-            current_h += u_height + pad
+        draw_text_wrapped(draw, lower_text, width=15, font=m_font, pos_y=i_height - int((20 / 640) * i_width) - font.getsize(lower_text)[1])
 
     image_name = "memify.webp"
-
     webp_file = os.path.join(image_name)
 
-    img.save(webp_file, "webp")
+    try:
+        img.save(webp_file, "webp")
+    except Exception as e:
+        raise Exception(f"Error saving image: {e}")
 
     return webp_file
