@@ -14,7 +14,7 @@ async def mmf(_, message: Message):
         await message.reply_text("**Give me text after /mmf to memify.**")
         return
 
-    msg = await message.reply_text("**Memifying this image! ✊🏻**")
+    msg = await message.reply_text(" ✍️ ")
     text = message.text.split(None, 1)[1]
     file = await app.download_media(reply_message)
 
@@ -52,7 +52,7 @@ async def drawText(image_path, text):
 
     if upper_text:
         for u_text in textwrap.wrap(upper_text, width=15):
-            u_width, u_height = draw.textsize(u_text, font=m_font)
+            u_width, u_height = draw.textbbox(u_text, font=m_font)
 
             draw.text(
                 xy=(((i_width - u_width) / 2) - 2, int((current_h / 640) * i_width)),
@@ -93,7 +93,7 @@ async def drawText(image_path, text):
 
     if lower_text:
         for l_text in textwrap.wrap(lower_text, width=15):
-            u_width, u_height = draw.textsize(l_text, font=m_font)
+            u_width, u_height = draw.textbbox(l_text, font=m_font)
 
             draw.text(
                 xy=(
