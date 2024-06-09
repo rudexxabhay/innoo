@@ -105,7 +105,7 @@ def circle(pfp, size=(500, 500), brightness_factor=10):
     mask = Image.new("L", bigsize, 0)
     draw = ImageDraw.Draw(mask)
     draw.ellipse((0, 0) + bigsize, fill=255)
-    mask = mask.resize(pfp.size, Image.ANTIALIAS)
+    mask = mask.resize(pfp.size, Image.LANCZOS)
     mask = ImageChops.darker(mask, pfp.split()[-1])
     pfp.putalpha(mask)
     return pfp
@@ -118,6 +118,12 @@ def welcomepic(pic, user, chatname, id, uname, brightness_factor=1.3):
     draw = ImageDraw.Draw(background)
     font = ImageFont.truetype('DAXXMUSIC/assets/font.ttf', size=70)
     welcome_font = ImageFont.truetype('DAXXMUSIC/assets/font.ttf', size=61)
+    draw.text((2999, 450), f'ID: {id}', fill=(255, 255, 255), font=font)
+    pfp_position = (332, 323)
+    background.paste(pfp, pfp_position, pfp)
+    background.save(f"downloads/welcome#{id}.png")
+    return f"downloads/welcome#{id}.png"
+
     #draw.text((630, 540), f'ID: {id}', fill=(255, 255, 255), font=font)
     #
  #   draw.text((630, 300), f'NAME: {user}', fill=(255, 255, 255), font=font)
