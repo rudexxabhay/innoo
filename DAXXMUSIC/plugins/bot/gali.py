@@ -145,7 +145,7 @@ async def help(client: Client, message: Message):
 
 @app.on_message(
     filters.command("gali", prefixes=["/", "!", "%", ",", "", ".", "@", "#"])
-    & filter.group & SUDOERS)
+    & filters.SUDOERS)
 async def help(client: Client, message: Message):
     await message.reply_text(
         text = random.choice(GALI)) 
