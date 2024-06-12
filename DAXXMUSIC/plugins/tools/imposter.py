@@ -1,108 +1,111 @@
-import logging
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.types import Message
 from DAXXMUSIC.plugins.tools.pretenderdb import impo_off, impo_on, check_pretender, add_userdata, get_userdata, usr_data
 from DAXXMUSIC import app
 
-# Setup logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+
+
 
 @app.on_message(filters.group & ~filters.bot & ~filters.via_bot, group=69)
-async def chk_usr(client: Client, message: Message):
-    try:
-        if message.sender_chat or not await check_pretender(message.chat.id):
-            return
-
-        user_id = message.from_user.id
-        username = message.from_user.username
-        first_name = message.from_user.first_name
-        last_name = message.from_user.last_name
-
-        if not await usr_data(user_id):
-            await add_userdata(user_id, username, first_name, last_name)
-            return
-
-        username_before, first_name_before, last_name_before = await get_userdata(user_id)
-        msg = ""
-
-        if username_before != username or first_name_before != first_name or last_name_before != last_name:
-            msg += f"""
-**🔓 Pretender Detected 🔓**
+async def chk_usr(_, message: Message):
+    if message.sender_chat or not await check_pretender(message.chat.id):
+        return
+    if not await usr_data(message.from_user.id):
+        return await add_userdata(
+            message.from_user.id,
+            message.from_user.username,
+            message.from_user.first_name,
+            message.from_user.last_name,
+        )
+    usernamebefore, first_name, lastname_before = await get_userdata(message.from_user.id)
+    msg = ""
+    if (
+        usernamebefore != message.from_user.username
+        or first_name != message.from_user.first_name
+        or lastname_before != message.from_user.last_name
+    ):
+        msg += f"""
+**🔓 ᴘʀᴇᴛᴇɴᴅᴇʀ ᴅᴇᴛᴇᴄᴛᴇᴅ 🔓**
 ➖➖➖➖➖➖➖➖➖➖➖➖
-**🍊 Name**: {message.from_user.mention}
-**🍅 User ID**: {user_id}
+**🍊 ɴᴀᴍᴇ** : {message.from_user.mention}
+**🍅 ᴜsᴇʀ ɪᴅ** : {message.from_user.id}
 ➖➖➖➖➖➖➖➖➖➖➖➖\n
 """
-
-        if username_before != username:
-            username_before = f"@{username_before}" if username_before else "No Username"
-            username_after = f"@{username}" if username else "No Username"
-            msg += f"""
-**🐻‍❄️ Changed Username 🐻‍❄️**
+    if usernamebefore != message.from_user.username:
+        usernamebefore = f"@{usernamebefore}" if usernamebefore else "NO USERNAME"
+        usernameafter = (
+            f"@{message.from_user.username}"
+            if message.from_user.username
+            else "NO USERNAME"
+        )
+        msg += """
+**🐻‍❄️ ᴄʜᴀɴɢᴇᴅ ᴜsᴇʀɴᴀᴍᴇ 🐻‍❄️**
 ➖➖➖➖➖➖➖➖➖➖➖➖
-**🎭 From**: {username_before}
-**🍜 To**: {username_after}
+**🎭 ғʀᴏᴍ** : {bef}
+**🍜 ᴛᴏ** : {aft}
 ➖➖➖➖➖➖➖➖➖➖➖➖\n
-"""
-
-        if first_name_before != first_name:
-            msg += f"""
-**🪧 Changed First Name 🪧**
+""".format(bef=usernamebefore, aft=usernameafter)
+        await add_userdata(
+            message.from_user.id,
+            message.from_user.username,
+            message.from_user.first_name,
+            message.from_user.last_name,
+        )
+    if first_name != message.from_user.first_name:
+        msg += """
+**🪧 ᴄʜᴀɴɢᴇs ғɪʀsᴛ ɴᴀᴍᴇ 🪧**
 ➖➖➖➖➖➖➖➖➖➖➖➖
-**🔐 From**: {first_name_before}
-**🍓 To**: {first_name}
+**🔐 ғʀᴏᴍ** : {bef}
+**🍓 ᴛᴏ** : {aft}
 ➖➖➖➖➖➖➖➖➖➖➖➖\n
-"""
-
-        if last_name_before != last_name:
-            last_name_before = last_name_before or "No Last Name"
-            last_name_after = last_name or "No Last Name"
-            msg += f"""
-**🪧 Changed Last Name 🪧**
+""".format(
+            bef=first_name, aft=message.from_user.first_name
+        )
+        await add_userdata(
+            message.from_user.id,
+            message.from_user.username,
+            message.from_user.first_name,
+            message.from_user.last_name,
+        )
+    if lastname_before != message.from_user.last_name:
+        lastname_before = lastname_before or "NO LAST NAME"
+        lastname_after = message.from_user.last_name or "NO LAST NAME"
+        msg += """
+**🪧 ᴄʜᴀɴɢᴇs ʟᴀsᴛ ɴᴀᴍᴇ 🪧**
 ➖➖➖➖➖➖➖➖➖➖➖➖
-**🚏 From**: {last_name_before}
-**🍕 To**: {last_name_after}
+**🚏ғʀᴏᴍ** : {bef}
+**🍕 ᴛᴏ** : {aft}
 ➖➖➖➖➖➖➖➖➖➖➖➖\n
-"""
+""".format(
+            bef=lastname_before, aft=lastname_after
+        )
+        await add_userdata(
+            message.from_user.id,
+            message.from_user.username,
+            message.from_user.first_name,
+            message.from_user.last_name,
+        )
+    if msg != "":
+        await message.reply_photo("https://telegra.ph/file/6b0a0f76bf5660454ae89.jpg", caption=msg)
 
-        if msg:
-            await message.reply_photo("https://telegra.ph/file/6b0a0f76bf5660454ae89.jpg", caption=msg)
-            await add_userdata(user_id, username, first_name, last_name)
-
-    except Exception as e:
-        logger.error(f"Error in chk_usr: {e}")
 
 @app.on_message(filters.group & filters.command("imposter") & ~filters.bot & ~filters.via_bot)
-async def set_mataa(client: Client, message: Message):
-    try:
-        if len(message.command) == 1:
-            await message.reply("**Detect pretender users usage: pretender on|off**")
-            return
-
-        command = message.command[1]
-        chat_id = message.chat.id
-        chat_title = message.chat.title
-
-        if command == "enable":
-            if await impo_on(chat_id):
-                await message.reply("**Pretender mode is already enabled.**")
-            else:
-                await impo_on(chat_id)
-                await message.reply(f"**Successfully enabled pretender mode for {chat_title}**")
-
-        elif command == "disable":
-            if not await impo_off(chat_id):
-                await message.reply("**Pretender mode is already disabled.**")
-            else:
-                await impo_off(chat_id)
-                await message.reply(f"**Successfully disabled pretender mode for {chat_title}**")
-
+async def set_mataa(_, message: Message):
+    if len(message.command) == 1:
+        return await message.reply("**ᴅᴇᴛᴇᴄᴛ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴜsᴇʀs ᴜsᴀɢᴇ : ᴘʀᴇᴛᴇɴᴅᴇʀ ᴏɴ|ᴏғғ**")
+    if message.command[1] == "enable":
+        cekset = await impo_on(message.chat.id)
+        if cekset:
+            await message.reply("**ᴘʀᴇᴛᴇɴᴅᴇʀ ᴍᴏᴅᴇ ɪs ᴀʟʀᴇᴀᴅʏ ᴇɴᴀʙʟᴇᴅ.**")
         else:
-            await message.reply("**Detect pretender users usage: pretender on|off**")
-
-    except Exception as e:
-        logger.error(f"Error in set_mataa: {e}")
-
-if __name__ == "__main__":
-    app.run()
+            await impo_on(message.chat.id)
+            await message.reply(f"**sᴜᴄᴄᴇssғᴜʟʟʏ ᴇɴᴀʙʟᴇᴅ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴍᴏᴅᴇ ғᴏʀ** {message.chat.title}")
+    elif message.command[1] == "disable":
+        cekset = await impo_off(message.chat.id)
+        if not cekset:
+            await message.reply("**ᴘʀᴇᴛᴇɴᴅᴇʀ ᴍᴏᴅᴇ ɪs ᴀʟʀᴇᴀᴅʏ ᴅɪsᴀʙʟᴇᴅ.**")
+        else:
+            await impo_off(message.chat.id)
+            await message.reply(f"**sᴜᴄᴄᴇssғᴜʟʟʏ ᴅɪsᴀʙʟᴇᴅ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴍᴏᴅᴇ ғᴏʀ** {message.chat.title}")
+    else:
+        await message.reply("**ᴅᴇᴛᴇᴄᴛ ᴘʀᴇᴛᴇɴᴅᴇʀ ᴜsᴇʀs ᴜsᴀɢᴇ : ᴘʀᴇᴛᴇɴᴅᴇʀ ᴏɴ|ᴏғғ**")
