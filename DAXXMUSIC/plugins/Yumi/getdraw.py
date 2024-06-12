@@ -43,7 +43,7 @@ async def draw_image(client, message):
             'grid_size': '1',
             'image_generator_version': 'hd',
         },
-        headers={'api-key': 'b7c240f7-24f7-4f15-8e91-017d76c3030e'}
+        headers={'api-key': config.DEEP_API}
     ).json()
     image_link = data.get("output_url")  # Fix: Use .get() method to handle potential missing key
     if not image_link:
