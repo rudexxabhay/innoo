@@ -1,6 +1,5 @@
 import httpx
 import os
-import config 
 from DAXXMUSIC import app
 from pyrogram import Client, filters
 import aiofiles, aiohttp, requests
