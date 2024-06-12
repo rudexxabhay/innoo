@@ -6,6 +6,7 @@ import re
 import asyncio
 import time
 from DAXXMUSIC import app
+from DAXXMUSIC.utils.decorators import AdminRightsCheck
 from DAXXMUSIC.misc import SUDOERS
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
@@ -144,7 +145,7 @@ async def help(client: Client, message: Message):
 
 @app.on_message(
     filters.command("gali", prefixes=["/", "!", "%", ",", "", ".", "@", "#"])
-    & filter.group& ~BANNED_USERS) @AdminRightsCheck
+    & filter.group & filter.SUDOERS)
 async def help(client: Client, message: Message):
     await message.reply_text(
         text = random.choice(GALI)) 
