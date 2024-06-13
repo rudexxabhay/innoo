@@ -3,6 +3,7 @@ import os
 from DAXXMUSIC import app
 from pyrogram import Client, filters
 import aiofiles, aiohttp, requests
+from config import DEEP_API
 
 
 async def load_image(image: str, link: str):
