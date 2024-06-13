@@ -40,7 +40,7 @@ async def gay(_, message):
     await message.reply_text(GAY, reply_markup=BUTTON, disable_web_page_preview=True, quote=True)
 
 
-@app.on_message(filters.command("lezbian"))
+@app.on_message(filters.command("lesbo"))
 async def lezbian(_, message):
     user_id = message.from_user.id
     user_name = message.from_user.first_name
