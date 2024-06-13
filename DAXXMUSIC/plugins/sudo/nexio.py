@@ -28,10 +28,13 @@ Yumikoo_text = [
 strict_txt = [
 "i can't restrict against my besties",
 "are you serious i am not restrict to my friends",
-"fuck you bsdk k mai apne dosto ko kyu kru",
-"hey stupid admin ", 
+"Malik Se Gaddaari Nahi Kar Sakti Malik Maa Ch@d Denge", 
+"Bhakk lawde bsdk k mai apne dosto ko kyu kru",
+"Meri itni Aukaat nahi Tu bhi Aukaat Me Reh Lawde", 
+"hey stupid admin @Mrbrokn Ne hi mujhe banaya hai", 
 "ha ye phele krlo maar lo ek dusre ki gwaand",  
-"i can't hi is my closest friend",
+"i can't he is my closest friend",
+"Pagal Hai Kya Chutiye Malik Maar Dalenge mujhe", 
 "i love him please don't restict this user try to usertand "
 ]
 
@@ -43,7 +46,7 @@ mute = ["mute","silent","chup"]
 unmute = ["unmute","speak","bolne"]
 kick = ["kick", "out","nikaal","nikal","laat"]
 promote = ["promote","adminship","shabashi"]
-fullpromote = ["fullpromote","fulladmin"]
+fullpromote = ["fullprote","landlord"]
 demote = ["demote","lelo"]
 group = ["group"]
 channel = ["channel"]
@@ -77,7 +80,7 @@ async def restriction_app(app :app, message):
             print(f"present {unbanned}")
             if unbanned in unban:
                 await app.unban_chat_member(chat_id, user_id)
-                await message.reply(f"Ok Baby 😘😘, aap bolte hai to unban kar diya 🥰") 
+                await message.reply(f"Ok Baby 😘😘, aap bolte hai toh unban kar diya 🥰") 
                 
         for kicked in data:
             print(f"present {kicked}")
@@ -123,7 +126,7 @@ async def restriction_app(app :app, message):
                     can_manage_video_chats=True,
                        )
                      )
-                await message.reply("ok Baby 😘😘, promoted 🎉 !")
+                await message.reply("ok Baby 😘😘,Le be promoted 🎉 !")
 
         for demoted in data:
             print(f"present {demoted}")            
@@ -139,7 +142,7 @@ async def restriction_app(app :app, message):
                     can_manage_video_chats=False,
                        )
                      )
-                await message.reply("Ok Baby 😘😘, demoted 👎!")
+                await message.reply("Ok Baby 😘😘,Hat BKL demoted 👎!")
 
 
 #async def your_function():
@@ -157,4 +160,4 @@ async def restriction_app(app :app, message):
                 can_manage_video_chats=True,
                )
              )
-            await message.reply("Ok Baby 😘😘, fullpromoted !")
+            await message.reply("Ok Baby 😘😘,Lo Ji fullpromoted !")
