@@ -20,7 +20,7 @@ BOT_USERNAME = getenv("BOT_USERNAME" , "Miss_YumiPro_Bot")
 # --------------------------------------------------------
 BOT_NAME = getenv("BOT_NAME" , "‣ Mɪss Yᴜᴍɪ Pʀᴏ⋆ ᴠ𝟸.𝟶")
 # ---------------------------------------------------------
-ASSUSERNAME = getenv("ASSUSERNAME" , "Assis_yumi")
+ASSUSERNAME = getenv("ASSUSERNAME" , "xPriya_me")
 # ---------------------------------------------------------
 DEEP_API = getenv("DEEP_API" , "5163c49d-b696-47f1-8cf9-4801738436dd") 
 #----------------------------------------------------------
@@ -53,7 +53,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 # ----------------------------------------------------------------
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/mrxbroken011/MISSYUMIxAI.git",
+    "https://github.com/mrxbroken011/YumiVer2.git",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "Master")
 GIT_TOKEN = getenv(
@@ -68,7 +68,7 @@ GIT_TOKEN = getenv(
 # ------------------------------------------------------------------------
 # -------------------------------------------------------------------------
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/brokenxnetwork")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+7yFRvkorUdFiZTll")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/chatting_indian_girls_group_boys")
 # ------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------
 
@@ -99,7 +99,7 @@ SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "709e1a2969664491b582008
 
 
 # -----------------------------------------------------------------------------------
-PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 25))
+PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 45))
 # ------------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------------
@@ -141,10 +141,10 @@ confirmer = {}
 # ------------------------------------------------------------------------
 # ------------------------------------------------------------------------
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://graph.org/file/799b5e10a642a0c018643.jpg"
+    "START_IMG_URL", "https://telegra.ph/file/1440277060503c7bb3055.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://graph.org/file/799b5e10a642a0c018643.jpg"
+    "PING_IMG_URL", "https://telegra.ph/file/0cb3f2fd6d29533e7100a.jpg"
 )
 PLAYLIST_IMG_URL = "https://telegra.ph/file/d723f4c80da157fca1678.jpg"
 STATS_IMG_URL = "https://telegra.ph/file/22929baacd6f08f0dc08b.jpg"
