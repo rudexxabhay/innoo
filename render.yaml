@@ -1,1 +1,6 @@
-
+services:
+  - type: worker
+    name: telegram-music-bot
+    env: docker
+    repo: https://github.com/mrxbroken011/yumiver2
+    dockerfilePath: docker/Dockerfile
