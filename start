@@ -1,2 +1,2 @@
-echo "HELLO BROKEN SIR...."
+echo "Starting Application..."
 python3 -m DAXXMUSIC
