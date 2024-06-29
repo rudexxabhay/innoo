@@ -1,4 +1,5 @@
 aiofiles
+flask
 aiohttp==3.9.3
 apscheduler
 asyncio
