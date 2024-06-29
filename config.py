@@ -20,7 +20,7 @@ BOT_USERNAME = getenv("BOT_USERNAME" , "Miss_YumiPro_Bot")
 # --------------------------------------------------------
 BOT_NAME = getenv("BOT_NAME" , "‣ Mɪss Yᴜᴍɪ Pʀᴏ⋆ ᴠ𝟸.𝟶")
 # ---------------------------------------------------------
-ASSUSERNAME = getenv("ASSUSERNAME" , "xPriya_me")
+ASSUSERNAME = getenv("ASSUSERNAME" , "@Hot_sexsy_priya")
 # ---------------------------------------------------------
 DEEP_API = getenv("DEEP_API" , "5163c49d-b696-47f1-8cf9-4801738436dd") 
 #----------------------------------------------------------
