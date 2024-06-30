@@ -9,4 +9,7 @@ COPY . /app/
 WORKDIR /app/
 RUN pip3 install --no-cache-dir -U -r requirements.txt
 
-CMD bash start
+COPY start.sh /app/
+RUN chmod +x /app/start.sh
+
+CMD ./start.sh
