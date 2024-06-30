@@ -17,12 +17,12 @@ async def admins(cli, message: Message, _, chat_id):
     state = message.text.split(None, 1)[1].strip()
     if state.isnumeric():
         state = int(state)
-        if 1 <= state <= 10:
+        if 1 <= state <= 9999:  # Adjusted the maximum limit to 9999
             got = await get_loop(chat_id)
             if got != 0:
                 state = got + state
-            if int(state) > 10:
-                state = 10
+            if int(state) > 9999:  # Adjusted the maximum limit to 9999
+                state = 9999
             await set_loop(chat_id, state)
             return await message.reply_text(
                 text=_["admin_18"].format(state, message.from_user.mention),
@@ -31,7 +31,7 @@ async def admins(cli, message: Message, _, chat_id):
         else:
             return await message.reply_text(_["admin_17"])
     elif state.lower() == "enable":
-        await set_loop(chat_id, 10)
+        await set_loop(chat_id, 9999)  # Adjusted to set the limit to 9999
         return await message.reply_text(
             text=_["admin_18"].format(state, message.from_user.mention),
             reply_markup=close_markup(_),
