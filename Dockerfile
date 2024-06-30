@@ -1,23 +1,17 @@
-FROM nikolaik/python-nodejs:python3.10-nodejs19
+# Use an official node image as a base image
 FROM node:14
 
+# Set the working directory
+WORKDIR /app
 
-COPY . /app/
-WORKDIR /app/
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-
+# Install dependencies
 RUN npm install
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-    
 
-RUN pip3 install --no-cache-dir -U -r requirements.txt
+# Copy the rest of the application code
+COPY . .
 
-
-COPY . . 
-
-
+# Specify the command to run your application
 CMD bash start
