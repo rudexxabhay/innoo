@@ -1,0 +1,6 @@
+[build]
+  command = "bash start"
+
+[[builds]]
+  src = "Dockerfile"
+  use = "@vercel/docker"
