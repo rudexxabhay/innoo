@@ -1,0 +1,16 @@
+name: YumiVer2
+services:
+  - name: brokenx-music
+    image:
+      git: https://github.com/mrxbroken011/YumiVer2
+    ports:
+      - port: 80
+        protocol: http
+    env:
+      API_ID: ${API_ID}
+      API_HASH: ${API_HASH}
+      BOT_TOKEN: ${BOT_TOKEN}
+      MONGO_DB_URI: ${MONGO_DB_URI}
+      OWNER_ID: ${OWNER_ID}
+      STRING_SESSION: ${STRING_SESSION}
+      LOGGER_ID: ${LOGGER_ID}
