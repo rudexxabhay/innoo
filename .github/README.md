@@ -24,3 +24,26 @@
 [<img src="https://github-readme-stats.vercel.app/api?username=mrxbroken011&count_private=true&show_icons=true&theme=chartreuse-dark&custom_title=What%27s+the+craic?&include_all_commits=true&hide_border=true&bg_color=000000" width="49%">](https://github.com/mrxbroken011)  [<img src="https://github-readme-streak-stats.herokuapp.com/?user=mrxbroken011&theme=chartreuse-dark&hide_border=True&bg_color=000000" width="49%">](https://github.com/mrxbroken011)
 
 [<img src="https://github.com/mrxbroken011/brokenxnetwork/blob/master/resources/hr.gif"/>](https://github.com/mrxbroken011)
+
+
+# YumiVer2
+
+A Telegram Music Player Bot, written in Python with Pyrogram and Py-Tgcalls.
+
+
+
+## Deploy to Koyeb
+
+You can deploy this project to Koyeb with one click:
+
+[![Deploy to Koyeb](https://www.koyeb.com/deploy/button.svg)](https://app.koyeb.com/deploy?repository=github.com/mrxbroken011/YumiVer2)
+
+## Environment Variables
+
+- `API_ID`: Get this value from https://my.telegram.org
+- `API_HASH`: Get this value from https://my.telegram.org
+- `BOT_TOKEN`: A Bot's token from Botfather
+- `MONGO_DB_URI`: Get a MongoDB URL from https://cloud.mongodb.com
+- `OWNER_ID`: The user ID of the user you would like to add as OWNER
+- `STRING_SESSION`: A Pyrogram v2 String Session from @STRINGSEASO_NBOT on Telegram
+- `LOGGER_ID`: Your Log Group ID, add your bot and promote it as an admin with full rights
