@@ -36,4 +36,4 @@ async def must_join_channel(app: Client, msg: Message):
             except ChatWriteForbidden:
                 pass
     except ChatAdminRequired:
-        print(f"๏ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ ᴀs ᴀɴ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇ ᴍᴜsᴛ_Jᴏɪɴ ᴄʜᴀᴛ ๏: {MUST_JOIN} !")
+        print(f"๏ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ ᴀs ᴀɴ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇ ᴍᴜsᴛ_Jᴏɪɴ ᴄʜᴀᴛ ๏: {MUST_JOIN} !\n\n𝐏ᴏᴡᴇʀᴇᴅ  𝐁ʏ : [𝐁ʀᴏᴋᴇɴ 𝐗 𝐍ᴇᴛᴡᴏʀᴋ](http://t.me/brokenxnetwork) ☠️")
