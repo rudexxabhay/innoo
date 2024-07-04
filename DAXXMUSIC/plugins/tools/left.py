@@ -92,7 +92,7 @@ async def member_has_left(client: app, member: ChatMemberUpdated):
                 profile_path=photo,
             )
         
-            caption = f"**#New_Member_Left**\n\n**๏** {user.mention} **ʜᴀs ʟᴇғᴛ ᴛʜɪs ɢʀᴏᴜᴘ**\n**๏ sᴇᴇ ʏᴏᴜ sᴏᴏɴ ᴀɢᴀɪɴ..!**\n│ \n└➻ ᴍᴀᴅᴇ ʙʏ ❣️✰ 𝕄ℝ 𝕏 𝔹ℝ𝕆𝕂𝔼ℕ  ✰😈"
+            caption = f"**#New_Member_Left**\n\n**๏** {user.mention} **ʜᴀs ʟᴇғᴛ ᴛʜɪs ɢʀᴏᴜᴘ**\n**๏ sᴇᴇ ʏᴏᴜ sᴏᴏɴ ᴀɢᴀɪɴ..!"
             button_text = "๏ ᴠɪᴇᴡ ᴜsᴇʀ ๏"
 
             # Generate a deep link to open the user's profile
@@ -120,6 +120,5 @@ async def member_has_left(client: app, member: ChatMemberUpdated):
             print(e)
             return
     else:
-        # Handle the case where the user has no profile photo
         print(f"User {user.id} has no profile photo.")
         
