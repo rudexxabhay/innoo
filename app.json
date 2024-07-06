@@ -1,73 +1,23 @@
-{
-    "name": "𝙳𝙰𝚇𝚇 𝙼𝚄𝚂𝙸𝙲",
-    "description": "A Telegram Music Player Bot, written in Python with Pyrogram and Py-Tgcalls.",
-    "logo": "https://telegra.ph/file/dbb3222d0fd3712e2a0e4.jpg",
-    "keywords": [
-    "python3",
-    "telegram",
-    "bot",
-    "DAXX",
-    "MusicBot",
-    "telegram-bot",
-    "pyrogram"
-    ],
-    "env": {
-      "API_ID": {
-        "description": "Get this value from https://my.telegram.org",
-        "value": "",
-        "required": true
-      },
-      "API_HASH": {
-        "description": "Get this value from https://my.telegram.org",
-        "value": "",
-        "required": true
-      },
-      "BOT_TOKEN": {
-        "description": "A Bot's token from Botfather",
-        "value": "",
-        "required": true
-      },
-      "MONGO_DB_URI": {
-        "description": "Get a mongodb url from https://cloud.mongodb.com.",
-        "value": "",
-        "required": true
-      },
-      "OWNER_ID": {
-        "description": "The user id of user whom you would like to add as OWNER.",
-        "value": "",
-        "required": true
-      },
-      "STRING_SESSION": {
-        "description": "A Pyrogram v2 String Session from @STRINGSEASO_NBOT on Telegram.",
-        "value": "",
-        "required": true
-      },
-      "HEROKU_API_KEY": {
-        "description": "Your Heroku account's API key",
-        "value": "",
-        "required": false
-      },
-      "HEROKU_APP_NAME": {
-        "description": "Your heroku app name",
-        "value": "",
-        "required": false
-      },
-      "LOGGER_ID": {
-        "description": "Your Log Group ID, add your bot and promote as an admin with full rights!. Channel ki id mat daal dena bsdk.",
-        "value": "",
-        "required": true
-      }
-    },
-    "buildpacks": [
-          {
-              "url": "heroku/python"
-          },
-          {
-              "url": "heroku/nodejs"
-          },
-          {
-              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
-          }
-      ],
-      "stack": "container"
-  }
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: new
+spec:
+  containers:
+    - name: new
+      image: Dockerfile
+      env:
+        - name: API_ID
+          value: "22576426"
+        - name: API_HASH
+          value: "2b754e3fbc8d45df8457217910c54fae"
+        - name: BOT_TOKEN
+          value: "7277731703:AAFN1FfdO_BMkK2Ci1I4bEySmpMd9-usRik"
+        - name: LOGGER_ID
+          value: "-1002094142057"
+        - name: MONGO_DB_URI
+          value: "mongodb+srv://asadinloveas:asadinloveas@cluster0.afg8tut.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        - name: OWNER_ID
+          value: "6369672953"
+        - name: STRING_SESSION
+          value: "BQFYfSoAWfxnGtPvBjSTHPMZmOL6Q3JXy4BAdx2m1qr1jcb_2ScVO8Pz4QZzaAdl4Q-A5qoII5Yjx3En46SzPFax7-QA9c1-RwZNrIQa9XKaLyGCnMbDoz2sgag3168aJuGjmtzHncQokgxlxMcyFx_KgZV9W0QGS47Yxemyx4uvnlEFCgCgV-wcrpJzqr-6ea8bXSh4YYghGXP7kCAKjqWvrH3gXsrpCcRR-CJw2j9MmIFAcgdz7pOT4dsfX7pHoKH0BSYLKjJBLDhIyRVVvTAllyvkRBBx9Yy9kIDVj3KECS7jrbhpoQPBQHyIOexoxVHNY-PD9A30phlcc01ui6W6TIomugAAAAGzjViqAA"
