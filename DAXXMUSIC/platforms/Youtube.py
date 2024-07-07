@@ -7,7 +7,9 @@ from typing import Union
 from pytgcalls.types import MediaStream
 from pytgcalls import idle
 
+
 import yt_dlp
+from pyrogram import client
 from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
 from youtubesearchpython.__future__ import VideosSearch
