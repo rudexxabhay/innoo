@@ -1,6 +1,7 @@
 import asyncio
 import os
 import re
+from pytgcalls import PyTgCalls
 from typing import Union
 from pytgcalls.types.input_stream import InputStream
 from pytgcalls.types.input_stream import InputAudioStream
